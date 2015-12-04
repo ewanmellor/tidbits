@@ -367,6 +367,7 @@
 		40FB91D217ACA53100F6EC64 /* UIDevice-Hardware.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40FB91CC17ACA50700F6EC64 /* UIDevice-Hardware.h */; };
 		40FD7882191D6CB0004B82D7 /* IdleState.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FD7881191D6CB0004B82D7 /* IdleState.m */; };
 		40FD7885191DF013004B82D7 /* TBUserDefaults+Tidbits.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FD7884191DF013004B82D7 /* TBUserDefaults+Tidbits.m */; };
+		40FE2EC41C11229E0019AAB4 /* NSLayoutConstraint+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE2EC31C11229E0019AAB4 /* NSLayoutConstraint+Misc.m */; };
 		4127173F17F63BB30062588B /* NSUserDefaults+PerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4127173E17F63BB30062588B /* NSUserDefaults+PerUser.m */; };
 		4166EA1717F64E160082973E /* NSUserDefaults+PerUser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4127173D17F63BB30062588B /* NSUserDefaults+PerUser.h */; };
 		D8A75A151B681AD800AF796B /* TBBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A75A141B681AD800AF796B /* TBBlockOperation.m */; };
@@ -875,6 +876,8 @@
 		40FD7881191D6CB0004B82D7 /* IdleState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdleState.m; sourceTree = "<group>"; };
 		40FD7883191DF013004B82D7 /* TBUserDefaults+Tidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBUserDefaults+Tidbits.h"; sourceTree = "<group>"; };
 		40FD7884191DF013004B82D7 /* TBUserDefaults+Tidbits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBUserDefaults+Tidbits.m"; sourceTree = "<group>"; };
+		40FE2EC21C11229E0019AAB4 /* NSLayoutConstraint+Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Misc.h"; sourceTree = "<group>"; };
+		40FE2EC31C11229E0019AAB4 /* NSLayoutConstraint+Misc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Misc.m"; sourceTree = "<group>"; };
 		4127173D17F63BB30062588B /* NSUserDefaults+PerUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+PerUser.h"; sourceTree = "<group>"; };
 		4127173E17F63BB30062588B /* NSUserDefaults+PerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+PerUser.m"; sourceTree = "<group>"; };
 		D8A75A131B681AD800AF796B /* TBBlockOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBlockOperation.h; sourceTree = "<group>"; };
@@ -1334,6 +1337,8 @@
 				408F4662176CD7D900C468EB /* NSInputStream+Misc.m */,
 				405AE48E190DC9DE006F2BF1 /* NSJSONSerialization+Misc.h */,
 				405AE48F190DC9DE006F2BF1 /* NSJSONSerialization+Misc.m */,
+				40FE2EC21C11229E0019AAB4 /* NSLayoutConstraint+Misc.h */,
+				40FE2EC31C11229E0019AAB4 /* NSLayoutConstraint+Misc.m */,
 				40BBE5C818F898A600601FE7 /* NSLayoutConstraintHelpers.h */,
 				40BBE5C518F8987F00601FE7 /* NSLayoutConstraintHelpers.m */,
 				400C95B31853C14A0095B9DC /* NSMutableArray+Ext.h */,
@@ -1866,6 +1871,7 @@
 				40937F1019049D7500A4A8BB /* TBUserDefaults.m in Sources */,
 				404F56161A38EAFC0081DA18 /* NSOperation+Misc.m in Sources */,
 				405AE477190D884C006F2BF1 /* WaitFor.m in Sources */,
+				40FE2EC41C11229E0019AAB4 /* NSLayoutConstraint+Misc.m in Sources */,
 				40A9B45B177F59680068F3F5 /* LogFormatter.m in Sources */,
 				404753B018F3A74300115A82 /* CPUTime.m in Sources */,
 				408E8993176A47D4001B61E6 /* NSArray+Map.m in Sources */,
