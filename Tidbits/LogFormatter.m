@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 #include <time.h>
 
 #import <Lumberjack/Lumberjack.h>
@@ -25,6 +26,27 @@
 // This is 6-7% slower and is only of value if you've got
 // a nasty threading problem so it's off by default.
 #define INCLUDE_THREAD_ID_ON_TTY 0
+
+// Set this to include the filename in the log output.
+// This is ~0.8% slower.  It is just included in DEBUG
+// builds by default because it's probably just bloat
+// in a production log file.  It's useful in Xcode for
+// use with https://github.com/krzysztofzablocki/KZLinkedConsole
+#if DEBUG
+#define INCLUDE_FILENAME 1
+#else
+#define INCLUDE_FILENAME 0
+#endif
+
+
+#if INCLUDE_FILENAME
+
+static const char * filenameOfPath(const char * const file) {
+    const char * filename = strrchr(file, '/');
+    return (filename == NULL ? file : filename + 1);
+}
+
+#endif
 
 
 @implementation LogFormatter
@@ -85,7 +107,21 @@
     gmtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
     snprintf(time_level_str, 30, "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage->logLevel));
-    return [NSString stringWithFormat:@"%s %s:%i | %@", time_level_str, logMessage->function, logMessage->lineNumber, logMessage->logMsg];
+    return [NSString stringWithFormat:
+            @"%s"
+#if INCLUDE_FILENAME
+            " %s %s:%i"
+#else
+            " %s:%i"
+#endif
+            " | %@",
+            time_level_str,
+            logMessage->function,
+#if INCLUDE_FILENAME
+            filenameOfPath(logMessage->file),
+#endif
+            logMessage->lineNumber,
+            logMessage->logMsg];
 }
 
 
@@ -146,12 +182,20 @@ static const char * logLevelToStr(int level) {
 #if INCLUDE_THREAD_ID_ON_TTY
             " %-4x"
 #endif
-            " %s:%d | %@",
+#if INCLUDE_FILENAME
+            " %s %s:%d"
+#else
+            " %s:%d"
+#endif
+            " | %@",
             time_level_str,
 #if INCLUDE_THREAD_ID_ON_TTY
             logMessage->machThreadID,
 #endif
             logMessage->function,
+#if INCLUDE_FILENAME
+            filenameOfPath(logMessage->file),
+#endif
             logMessage->lineNumber,
             logMessage->logMsg];
 }
@@ -194,9 +238,15 @@ static char logLevelToChar(int level) {
     localtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
     snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage->logLevel), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
-    return [NSString stringWithFormat:@"%s %-4x %s:%d | %@",
+    return [NSString stringWithFormat:@"%s"
+#if INCLUDE_THREAD_ID_ON_TTY
+            " %-4x"
+#endif
+            " %s:%d | %@",
             time_level_str,
+#if INCLUDE_THREAD_ID_ON_TTY
             logMessage->machThreadID,
+#endif
             logMessage->function,
             logMessage->lineNumber,
             logMessage->logMsg];
