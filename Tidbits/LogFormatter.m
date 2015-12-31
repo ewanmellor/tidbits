@@ -62,13 +62,17 @@
     [DDLog addLogger:ttyLogger withLogLevel:255];
 
     [ttyLogger setColorsEnabled:YES];
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-    [ttyLogger setForegroundColor:[UIColor brownColor] backgroundColor:nil forFlag:LOG_FLAG_USER];
-    [ttyLogger setForegroundColor:[UIColor redColor] backgroundColor:nil forFlag:LOG_FLAG_ERROR];
-    [ttyLogger setForegroundColor:[UIColor purpleColor] backgroundColor:nil forFlag:LOG_FLAG_WARN];
-    [ttyLogger setForegroundColor:[UIColor darkGrayColor] backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
-    [ttyLogger setForegroundColor:[UIColor blueColor] backgroundColor:nil forFlag:LOG_FLAG_INFO];
+#if TARGET_OS_IOS
+#define COLOR UIColor
+#else
+#define COLOR NSColor
 #endif
+    [ttyLogger setForegroundColor:[COLOR brownColor] backgroundColor:nil forFlag:LOG_FLAG_USER];
+    [ttyLogger setForegroundColor:[COLOR redColor] backgroundColor:nil forFlag:LOG_FLAG_ERROR];
+    [ttyLogger setForegroundColor:[COLOR purpleColor] backgroundColor:nil forFlag:LOG_FLAG_WARN];
+    [ttyLogger setForegroundColor:[COLOR darkGrayColor] backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
+    [ttyLogger setForegroundColor:[COLOR blueColor] backgroundColor:nil forFlag:LOG_FLAG_INFO];
+#undef COLOR
 }
 
 
