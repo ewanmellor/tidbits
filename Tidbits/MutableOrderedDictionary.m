@@ -6,6 +6,8 @@
 //  Copyright © 2016 Tipbit, Inc. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "MutableOrderedDictionary.h"
 
 NS_ASSUME_NONNULL_BEGIN

@@ -6,6 +6,8 @@
 //  Copyright © 2015 Tipbit, Inc. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "NSMutableArray+Sorted.h"
 
 #import "MutableSortedDictionary.h"

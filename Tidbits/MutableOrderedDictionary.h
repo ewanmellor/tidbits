@@ -6,7 +6,7 @@
 //  Copyright © 2016 Tipbit, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Foundation/NSDictionary.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
