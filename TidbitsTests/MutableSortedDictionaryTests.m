@@ -49,6 +49,7 @@ static NSComparator Comparator;
     XCTAssertEqualObjects(d[@"A"], @4);
     XCTAssertEqualObjects(d[@"B"], @3);
     XCTAssertEqualObjects(d[@"C"], @2);
+    XCTAssertEqualObjects(d.allValues, (@[@4, @3, @2]));
 }
 
 
@@ -75,6 +76,7 @@ static NSComparator Comparator;
     XCTAssertEqualObjects(d[@"D"], @4);
     XCTAssertEqualObjects(d[@"E"], @5);
     XCTAssertNil(d[@"F"]);
+    XCTAssertEqualObjects(d.allValues, (@[@1, @3, @4, @5]));
 }
 
 
