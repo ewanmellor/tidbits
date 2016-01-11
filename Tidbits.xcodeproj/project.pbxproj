@@ -105,6 +105,10 @@
 		406133301A814B5B0076F37F /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4061332A1A814AC70076F37F /* NSStringPunycodeAdditions.m */; };
 		406133311A814B600076F37F /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 406133291A814AC70076F37F /* NSStringPunycodeAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		406212E8199E98EF0083BB3C /* FileCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 406212E7199E98EF0083BB3C /* FileCompressor.m */; };
+		406BBA231C434501004314DE /* MutableOrderedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 406BBA211C434501004314DE /* MutableOrderedDictionary.h */; };
+		406BBA241C434501004314DE /* MutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BBA221C434501004314DE /* MutableOrderedDictionary.m */; };
+		406BBA251C434501004314DE /* MutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BBA221C434501004314DE /* MutableOrderedDictionary.m */; };
+		406BBA291C43460D004314DE /* MutableOrderedDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BBA281C43460D004314DE /* MutableOrderedDictionaryTests.m */; };
 		406FA38E1805A5B700C408CE /* NSArray+MapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 406FA38D1805A5B700C408CE /* NSArray+MapTests.m */; };
 		406FEB0E1B8597C9001F0DFB /* UILabel+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 406FEB0D1B8597C9001F0DFB /* UILabel+Misc.m */; };
 		406FEB141B859E5A001F0DFB /* CATransition+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 406FEB131B859E5A001F0DFB /* CATransition+Misc.m */; };
@@ -725,6 +729,9 @@
 		4061332D1A814B080076F37F /* PunycodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
 		406212E6199E98EF0083BB3C /* FileCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCompressor.h; sourceTree = "<group>"; };
 		406212E7199E98EF0083BB3C /* FileCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCompressor.m; sourceTree = "<group>"; };
+		406BBA211C434501004314DE /* MutableOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableOrderedDictionary.h; sourceTree = "<group>"; };
+		406BBA221C434501004314DE /* MutableOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableOrderedDictionary.m; sourceTree = "<group>"; };
+		406BBA281C43460D004314DE /* MutableOrderedDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableOrderedDictionaryTests.m; sourceTree = "<group>"; };
 		406FA38D1805A5B700C408CE /* NSArray+MapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapTests.m"; sourceTree = "<group>"; };
 		406FEB0C1B8597C9001F0DFB /* UILabel+Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Misc.h"; sourceTree = "<group>"; };
 		406FEB0D1B8597C9001F0DFB /* UILabel+Misc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Misc.m"; sourceTree = "<group>"; };
@@ -1150,6 +1157,8 @@
 				404557831A255A97009FEF2F /* LoggingMacrosWrappers.h */,
 				400C95441852E9DC0095B9DC /* MPMoviePlayerViewController+Ext.h */,
 				400C95451852E9DC0095B9DC /* MPMoviePlayerViewController+Ext.m */,
+				406BBA211C434501004314DE /* MutableOrderedDictionary.h */,
+				406BBA221C434501004314DE /* MutableOrderedDictionary.m */,
 				408237661C0F7A8600C92E85 /* MutableSortedDictionary.h */,
 				408237671C0F7A8600C92E85 /* MutableSortedDictionary.m */,
 				40E343B31785FF73001A93E9 /* OperationManager.h */,
@@ -1201,6 +1210,7 @@
 				402E777118A6DB9D007176E2 /* GTMNSString+URLArgumentsTests.m */,
 				402E777718A740A3007176E2 /* GTMNSString+XMLTests.m */,
 				40CB974B1A4C904900DE58E5 /* LogFormatterTests.m */,
+				406BBA281C43460D004314DE /* MutableOrderedDictionaryTests.m */,
 				4082376E1C0F7FE600C92E85 /* MutableSortedDictionaryTests.m */,
 				406FA38D1805A5B700C408CE /* NSArray+MapTests.m */,
 				40DE5181181C9E1400371475 /* NSArray+MiscTests.m */,
@@ -1518,6 +1528,7 @@
 				40E48BCE198B331E0015C54E /* NSData+MD5.h in Headers */,
 				40E48BCF198B331E0015C54E /* NSData+NSInputStream.h in Headers */,
 				40E48BD0198B331E0015C54E /* NSData+SHA256.h in Headers */,
+				406BBA231C434501004314DE /* MutableOrderedDictionary.h in Headers */,
 				40E48BD1198B331E0015C54E /* NSDate+Ext.h in Headers */,
 				40E48BD2198B331E0015C54E /* NSDate+ISO8601.h in Headers */,
 				40E48BD3198B331E0015C54E /* NSDictionary+Map.h in Headers */,
@@ -1935,6 +1946,7 @@
 				408F67CD1782CABE00E974AD /* UIImage+Resize.m in Sources */,
 				40BD90341777C13400A3ED9C /* UTI.m in Sources */,
 				407100D217FFA4FD006F4115 /* NSString+StripHTML.m in Sources */,
+				406BBA241C434501004314DE /* MutableOrderedDictionary.m in Sources */,
 				405EE44819AEA7EB0062DAE7 /* TBAsserts.m in Sources */,
 				40FB91C017ACA15D00F6EC64 /* NSBundle+Versions.m in Sources */,
 				181BC4D81902069300D53080 /* RMDateSelectionViewController.m in Sources */,
@@ -1977,6 +1989,7 @@
 				4006C68618121345007DBC6D /* NSString+MiscTests.m in Sources */,
 				402E776A18A61E94007176E2 /* NSSet+MiscTests.m in Sources */,
 				4082376F1C0F7FE600C92E85 /* MutableSortedDictionaryTests.m in Sources */,
+				406BBA291C43460D004314DE /* MutableOrderedDictionaryTests.m in Sources */,
 				40C2C4461829904100205EBB /* SRVResolverTests.m in Sources */,
 				408D9C701A1857E0003C5ABC /* UTITests.m in Sources */,
 				405AE492190DFE9D006F2BF1 /* NSJSONSerialization+MiscTests.m in Sources */,
@@ -2023,6 +2036,7 @@
 				40E48B55198B266E0015C54E /* NSArray+Map.m in Sources */,
 				40E48B56198B266E0015C54E /* NSArray+Misc.m in Sources */,
 				40E48B57198B266E0015C54E /* NSBundle+Versions.m in Sources */,
+				406BBA251C434501004314DE /* MutableOrderedDictionary.m in Sources */,
 				40E48B58198B266E0015C54E /* NSData+Base64.m in Sources */,
 				40D8E36E1BFD424800EC5872 /* Reflection.m in Sources */,
 				4050606A1AC905F800308CAF /* NSDateFormatter+Misc.m in Sources */,
