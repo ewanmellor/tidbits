@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithComparator:(nullable NSComparator)comparator;
 
 -(ObjectType)objectAtIndex:(NSUInteger)index;
--(ObjectType)objectAtIndexedSubscript:(NSUInteger)idx NS_AVAILABLE(10_8, 6_0);
+-(ObjectType)objectAtIndexedSubscript:(NSUInteger)idx;
 
 -(void)removeLastObject;
 -(void)removeObjectAtIndex:(NSUInteger)index;
