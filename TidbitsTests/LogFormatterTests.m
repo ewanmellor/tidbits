@@ -30,7 +30,7 @@
     NSString * result = [formatter formatLogMessage:msg];
 
     NSString * expectedDateStr = [[msg->timestamp iso8601String_23] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
-    NSString * expected = [NSString stringWithFormat:@"%@ debug test_func:99 | Test message", expectedDateStr];
+    NSString * expected = [NSString stringWithFormat:@"%@ debug test_func testfile.m:99 | Test message", expectedDateStr];
     XCTAssertEqualStrings(result, expected);
 }
 
@@ -42,7 +42,7 @@
     NSString * result = [formatter formatLogMessage:msg];
 
     NSString * expectedTimeStr = [[msg->timestamp iso8601String_local_23] substringFromIndex:11];
-    NSString * expected = [NSString stringWithFormat:@"D %@ test_func:99 | Test message", expectedTimeStr];
+    NSString * expected = [NSString stringWithFormat:@"D %@ test_func testfile.m:99 | Test message", expectedTimeStr];
     XCTAssertEqualStrings(result, expected);
 }
 
