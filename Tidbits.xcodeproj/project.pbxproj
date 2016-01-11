@@ -105,7 +105,7 @@
 		406133301A814B5B0076F37F /* NSStringPunycodeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4061332A1A814AC70076F37F /* NSStringPunycodeAdditions.m */; };
 		406133311A814B600076F37F /* NSStringPunycodeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 406133291A814AC70076F37F /* NSStringPunycodeAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		406212E8199E98EF0083BB3C /* FileCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 406212E7199E98EF0083BB3C /* FileCompressor.m */; };
-		406BBA231C434501004314DE /* MutableOrderedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 406BBA211C434501004314DE /* MutableOrderedDictionary.h */; };
+		406BBA231C434501004314DE /* MutableOrderedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 406BBA211C434501004314DE /* MutableOrderedDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		406BBA241C434501004314DE /* MutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BBA221C434501004314DE /* MutableOrderedDictionary.m */; };
 		406BBA251C434501004314DE /* MutableOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BBA221C434501004314DE /* MutableOrderedDictionary.m */; };
 		406BBA291C43460D004314DE /* MutableOrderedDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BBA281C43460D004314DE /* MutableOrderedDictionaryTests.m */; };
@@ -130,7 +130,7 @@
 		4079641019C63614003315A9 /* NSMutableIndexSet+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4079640F19C63614003315A9 /* NSMutableIndexSet+Misc.m */; };
 		4079641219C63905003315A9 /* NSMutableIndexSet+MiscTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4079641119C63905003315A9 /* NSMutableIndexSet+MiscTests.m */; };
 		407ADD461AAA297000BBE477 /* TBTestHelpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4006C52A18559C6200B2F22A /* TBTestHelpers.h */; };
-		408237681C0F7A8600C92E85 /* MutableSortedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 408237661C0F7A8600C92E85 /* MutableSortedDictionary.h */; };
+		408237681C0F7A8600C92E85 /* MutableSortedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 408237661C0F7A8600C92E85 /* MutableSortedDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		408237691C0F7A8600C92E85 /* MutableSortedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 408237671C0F7A8600C92E85 /* MutableSortedDictionary.m */; };
 		4082376A1C0F7A8600C92E85 /* MutableSortedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 408237671C0F7A8600C92E85 /* MutableSortedDictionary.m */; };
 		4082376F1C0F7FE600C92E85 /* MutableSortedDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4082376E1C0F7FE600C92E85 /* MutableSortedDictionaryTests.m */; };
