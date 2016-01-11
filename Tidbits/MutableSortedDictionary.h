@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface MutableSortedDictionary<__covariant KeyType, __covariant ObjectType> : NSMutableDictionary<KeyType, ObjectType>
+@interface MutableSortedDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
 
 /**
  * @param comparator May be NULL, in which case a default comparator will be used that

@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface MutableOrderedDictionary<__covariant KeyType, __covariant ObjectType> ()
+@interface MutableOrderedDictionary<KeyType, ObjectType> ()
 
 @property (nonatomic, readonly) NSMutableArray<KeyType> * keyArray;
 @property (nonatomic, readonly) NSMutableDictionary<KeyType, ObjectType> * dict;

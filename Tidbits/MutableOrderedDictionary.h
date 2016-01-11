@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Note that this is distinct from MutableSortedDictionary, which sorts its keys based on
  * a given NSComparator rather than insertion order.
  */
-@interface MutableOrderedDictionary<__covariant KeyType, __covariant ObjectType> : NSMutableDictionary<KeyType, ObjectType>
+@interface MutableOrderedDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
 
 +(MutableOrderedDictionary *)dictionary;
 

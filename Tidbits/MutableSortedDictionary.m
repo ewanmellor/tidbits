@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface MutableSortedDictionary<__covariant KeyType, __covariant ObjectType> ()
+@interface MutableSortedDictionary<KeyType, ObjectType> ()
 
 @property (nonatomic, copy, readonly) NSComparator comparator;
 @property (nonatomic, readonly) NSMutableArray<KeyType> * keyArray;
