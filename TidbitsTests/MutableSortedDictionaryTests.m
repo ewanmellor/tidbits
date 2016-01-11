@@ -78,4 +78,36 @@ static NSComparator Comparator;
 }
 
 
+-(void)testEnumerate {
+    MutableSortedDictionary * d = [[MutableSortedDictionary alloc] initWithComparator:Comparator];
+    d[@"A"] = @1;
+    d[@"C"] = @0;
+    d[@"B"] = @2;
+    d[@"E"] = @5;
+    d[@"D"] = @4;
+
+    NSMutableArray * keys = [NSMutableArray array];
+    for (NSString * k in d) {
+        [keys addObject:k];
+    }
+    XCTAssertEqualObjects(keys, (@[@"A", @"B", @"C", @"D", @"E"]));
+
+    NSMutableArray * keys2 = [NSMutableArray array];
+    NSEnumerator * keyEnum = d.keyEnumerator;
+    NSString * k;
+    while (nil != (k = [keyEnum nextObject])) {
+        [keys2 addObject:k];
+    }
+    XCTAssertEqualObjects(keys, keys2);
+
+    NSMutableArray * objs = [NSMutableArray array];
+    NSEnumerator * objEnum = d.objectEnumerator;
+    NSNumber * o;
+    while (nil != (o = [objEnum nextObject])) {
+        [objs addObject:o];
+    }
+    XCTAssertEqualObjects(objs, (@[@1, @2, @0, @4, @5]));
+}
+
+
 @end

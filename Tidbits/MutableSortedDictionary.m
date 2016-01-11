@@ -119,6 +119,11 @@ static NSComparator defaultComparator;
 }
 
 
+-(NSEnumerator *)keyEnumerator {
+    return [self.keyArray objectEnumerator];
+}
+
+
 @end
 
 
