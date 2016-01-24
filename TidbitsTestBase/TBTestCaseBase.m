@@ -85,4 +85,16 @@
 }
 
 
+-(void)assertIsNSError:(NSError *)error domain:(NSString *)domain code:(NSInteger)code {
+    XCTAssertIsKindOf(error, NSError);
+    XCTAssertEqualStrings(error.domain, domain);
+    XCTAssertEqual(error.code, code);
+}
+
+
+-(void)assertIsNSError:(NSError *)error expectedError:(NSError *)expectedError {
+    [self assertIsNSError:error domain:expectedError.domain code:expectedError.code];
+}
+
+
 @end

@@ -315,4 +315,8 @@
 -(id)loadJSONFromBundle:(NSString*)resourceName;
 
 
+-(void)assertIsNSError:(NSError *)error domain:(NSString *)domain code:(NSInteger)code;
+-(void)assertIsNSError:(NSError *)error expectedError:(NSError *)expectedError;
+
+
 @end
