@@ -105,7 +105,7 @@ static const char * filenameOfPath(const char * const file) {
     int ts_frac = (int)round(((ts - (double)ts_whole) * 1000.0));
     gmtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
-    snprintf(time_level_str, 30, "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage.level));
+    snprintf(time_level_str, 30, "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logFlagToStr(logMessage.flag));
     return [NSString stringWithFormat:
             @"%s"
 #if INCLUDE_FILENAME
@@ -124,18 +124,18 @@ static const char * filenameOfPath(const char * const file) {
 }
 
 
-static const char * logLevelToStr(DDLogLevel level) {
-    switch (level) {
-        case DDLogLevelError:
+static const char * logFlagToStr(DDLogFlag flag) {
+    switch (flag) {
+        case DDLogFlagError:
             return "error";
 
-        case DDLogLevelWarning:
+        case DDLogFlagWarning:
             return "warn ";
 
-        case DDLogLevelInfo:
+        case DDLogFlagInfo:
             return "info ";
 
-        case DDLogLevelDebug:
+        case DDLogFlagDebug:
             return "debug";
 
         default:
@@ -151,7 +151,7 @@ static const char * logLevelToStr(DDLogLevel level) {
     time_t ts_whole = (time_t)ts;
     int ts_frac = (int)round((ts - (double)ts_whole) * 1000.0);
     gmtime_r(&ts_whole, &tm);
-    snprintf(time_level_str, sizeof(time_level_str), "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage.level));
+    snprintf(time_level_str, sizeof(time_level_str), "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logFlagToStr(logMessage.flag));
     return [NSString stringWithFormat:@"%s %@:%lu | %@", time_level_str, logMessage.function, logMessage.line, logMessage.message];
 }
 
@@ -170,7 +170,7 @@ static const char * logLevelToStr(DDLogLevel level) {
     int ts_frac = (int)round((ts - (double)ts_whole) * 1000.0);
     localtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
-    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage.level), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
+    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logFlagToChar(logMessage.flag), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
     return [NSString stringWithFormat:@"%s"
 #if INCLUDE_THREAD_ID_ON_TTY
             " %-4x"
@@ -194,18 +194,18 @@ static const char * logLevelToStr(DDLogLevel level) {
 }
 
 
-static char logLevelToChar(DDLogLevel level) {
-    switch (level) {
-        case DDLogLevelError:
+static char logFlagToChar(DDLogFlag flag) {
+    switch (flag) {
+        case DDLogFlagError:
             return 'E';
 
-        case DDLogLevelWarning:
+        case DDLogFlagWarning:
             return 'W';
 
-        case DDLogLevelInfo:
+        case DDLogFlagInfo:
             return 'I';
 
-        case DDLogLevelDebug:
+        case DDLogFlagDebug:
             return 'D';
 
         default:
@@ -224,7 +224,7 @@ static char logLevelToChar(DDLogLevel level) {
     int ts_frac = (int)round((ts - (double)ts_whole) * 1000.0);
     localtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
-    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage.level), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
+    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logFlagToChar(logMessage.flag), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
     return [NSString stringWithFormat:@"%s"
 #if INCLUDE_THREAD_ID_ON_TTY
             " %-4x"

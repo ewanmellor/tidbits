@@ -26,8 +26,6 @@
 #undef NSLog
 #undef NSLogError
 #undef NSLogWarn
-#undef NSLogInfo
-#undef NSLogUser
 #undef DLog
 
 #undef _LoggingMacrosPrefix
@@ -39,7 +37,6 @@
 
 #define NSLogError(__fmt, ...) LOG_MAYBE(NO,   DDLogLevelAll, DDLogFlagError, 0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
 #define NSLogWarn(__fmt, ...)  LOG_MAYBE(YES,  DDLogLevelAll, DDLogFlagWarning,  0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
-#define NSLogInfo(__fmt, ...)  LOG_MAYBE(YES,  DDLogLevelAll, DDLogFlagInfo,  0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
 #define NSLog(__fmt, ...)      LOG_MAYBE(YES,  DDLogLevelAll, DDLogFlagInfo,  0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
 
 #if DEBUG
