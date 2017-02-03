@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tipbit, Inc. All rights reserved.
 //
 
-#import <Lumberjack/DDLog.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #import "Breadcrumbs.h"
 #import "LoggingMacros.h"

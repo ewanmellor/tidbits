@@ -10,7 +10,7 @@
 #include <string.h>
 #include <time.h>
 
-#import <Lumberjack/Lumberjack.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 #import "LoggingMacros.h"
 
 #import "LogFormatter.h"
@@ -72,7 +72,7 @@ static const char * filenameOfPath(const char * const file) {
     LogFormatter* aslFormatter = [[LogFormatter alloc] init];
     DDASLLogger* aslLogger = [DDASLLogger sharedInstance];
     aslLogger.logFormatter = aslFormatter;
-    [DDLog addLogger:aslLogger withLogLevel:255];
+    [DDLog addLogger:aslLogger];
 
     return aslFormatter;
 }
@@ -81,7 +81,7 @@ static const char * filenameOfPath(const char * const file) {
 +(void)registerDefaultTTYLogger:(NSObject<DDLogFormatter> *)formatter {
     DDTTYLogger* ttyLogger = [DDTTYLogger sharedInstance];
     ttyLogger.logFormatter = formatter;
-    [DDLog addLogger:ttyLogger withLogLevel:255];
+    [DDLog addLogger:ttyLogger];
 
     [ttyLogger setColorsEnabled:YES];
 #if TARGET_OS_IOS
@@ -89,11 +89,10 @@ static const char * filenameOfPath(const char * const file) {
 #else
 #define COLOR NSColor
 #endif
-    [ttyLogger setForegroundColor:[COLOR brownColor] backgroundColor:nil forFlag:LOG_FLAG_USER];
-    [ttyLogger setForegroundColor:[COLOR redColor] backgroundColor:nil forFlag:LOG_FLAG_ERROR];
-    [ttyLogger setForegroundColor:[COLOR purpleColor] backgroundColor:nil forFlag:LOG_FLAG_WARN];
-    [ttyLogger setForegroundColor:[COLOR darkGrayColor] backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
-    [ttyLogger setForegroundColor:[COLOR blueColor] backgroundColor:nil forFlag:LOG_FLAG_INFO];
+    [ttyLogger setForegroundColor:[COLOR redColor] backgroundColor:nil forFlag:DDLogFlagError];
+    [ttyLogger setForegroundColor:[COLOR purpleColor] backgroundColor:nil forFlag:DDLogFlagWarning];
+    [ttyLogger setForegroundColor:[COLOR blueColor] backgroundColor:nil forFlag:DDLogFlagInfo];
+    [ttyLogger setForegroundColor:[COLOR darkGrayColor] backgroundColor:nil forFlag:DDLogFlagDebug];
 #undef COLOR
 }
 
@@ -101,48 +100,42 @@ static const char * filenameOfPath(const char * const file) {
 -(NSString *)formatLogMessage:(DDLogMessage *)logMessage {
     char time_level_str[30];
     struct tm tm;
-    NSTimeInterval ts = [logMessage->timestamp timeIntervalSince1970];
+    NSTimeInterval ts = [logMessage.timestamp timeIntervalSince1970];
     time_t ts_whole = (time_t)ts;
     int ts_frac = (int)round(((ts - (double)ts_whole) * 1000.0));
     gmtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
-    snprintf(time_level_str, 30, "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage->logLevel));
+    snprintf(time_level_str, 30, "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage.level));
     return [NSString stringWithFormat:
             @"%s"
 #if INCLUDE_FILENAME
-            " %s %s:%i"
+            " %@ %s:%lu"
 #else
             " %s:%i"
 #endif
             " | %@",
             time_level_str,
-            logMessage->function,
+            logMessage.function,
 #if INCLUDE_FILENAME
-            filenameOfPath(logMessage->file),
+            filenameOfPath(logMessage.file.UTF8String),
 #endif
-            logMessage->lineNumber,
-            logMessage->logMsg];
+            logMessage.line,
+            logMessage.message];
 }
 
 
-static const char * logLevelToStr(int level) {
+static const char * logLevelToStr(DDLogLevel level) {
     switch (level) {
-        case LOG_LEVEL_FATAL:
-            return "fatal";
-
-        case LOG_LEVEL_ERROR:
+        case DDLogLevelError:
             return "error";
 
-        case LOG_LEVEL_WARN:
+        case DDLogLevelWarning:
             return "warn ";
 
-        case LOG_LEVEL_USER:
-            return "user ";
-
-        case LOG_LEVEL_INFO:
+        case DDLogLevelInfo:
             return "info ";
 
-        case LOG_LEVEL_DEBUG:
+        case DDLogLevelDebug:
             return "debug";
 
         default:
@@ -154,12 +147,12 @@ static const char * logLevelToStr(int level) {
 -(NSString *)formatLogMessageB:(DDLogMessage *)logMessage {
     char time_level_str[30];
     struct tm tm;
-    NSTimeInterval ts = [logMessage->timestamp timeIntervalSince1970];
+    NSTimeInterval ts = [logMessage.timestamp timeIntervalSince1970];
     time_t ts_whole = (time_t)ts;
     int ts_frac = (int)round((ts - (double)ts_whole) * 1000.0);
     gmtime_r(&ts_whole, &tm);
-    snprintf(time_level_str, sizeof(time_level_str), "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage->logLevel));
-    return [NSString stringWithFormat:@"%s %s:%i | %@", time_level_str, logMessage->function, logMessage->lineNumber, logMessage->logMsg];
+    snprintf(time_level_str, sizeof(time_level_str), "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logLevelToStr(logMessage.level));
+    return [NSString stringWithFormat:@"%s %@:%lu | %@", time_level_str, logMessage.function, logMessage.line, logMessage.message];
 }
 
 
@@ -172,18 +165,18 @@ static const char * logLevelToStr(int level) {
 -(NSString *)formatLogMessage:(DDLogMessage *)logMessage {
     char time_level_str[15];
     struct tm tm;
-    NSTimeInterval ts = [logMessage->timestamp timeIntervalSince1970];
+    NSTimeInterval ts = [logMessage.timestamp timeIntervalSince1970];
     time_t ts_whole = (time_t)ts;
     int ts_frac = (int)round((ts - (double)ts_whole) * 1000.0);
     localtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
-    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage->logLevel), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
+    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage.level), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
     return [NSString stringWithFormat:@"%s"
 #if INCLUDE_THREAD_ID_ON_TTY
             " %-4x"
 #endif
 #if INCLUDE_FILENAME
-            " %s %s:%d"
+            " %@ %s:%lu"
 #else
             " %s:%d"
 #endif
@@ -192,33 +185,27 @@ static const char * logLevelToStr(int level) {
 #if INCLUDE_THREAD_ID_ON_TTY
             logMessage->machThreadID,
 #endif
-            logMessage->function,
+            logMessage.function,
 #if INCLUDE_FILENAME
-            filenameOfPath(logMessage->file),
+            filenameOfPath(logMessage.file.UTF8String),
 #endif
-            logMessage->lineNumber,
-            logMessage->logMsg];
+            logMessage.line,
+            logMessage.message];
 }
 
 
-static char logLevelToChar(int level) {
+static char logLevelToChar(DDLogLevel level) {
     switch (level) {
-        case LOG_LEVEL_FATAL:
-            return 'F';
-
-        case LOG_LEVEL_ERROR:
+        case DDLogLevelError:
             return 'E';
 
-        case LOG_LEVEL_WARN:
+        case DDLogLevelWarning:
             return 'W';
 
-        case LOG_LEVEL_USER:
-            return 'U';
-
-        case LOG_LEVEL_INFO:
+        case DDLogLevelInfo:
             return 'I';
 
-        case LOG_LEVEL_DEBUG:
+        case DDLogLevelDebug:
             return 'D';
 
         default:
@@ -232,24 +219,24 @@ static char logLevelToChar(int level) {
 -(NSString *)formatLogMessageB:(DDLogMessage *)logMessage {
     char time_level_str[15];
     struct tm tm;
-    NSTimeInterval ts = [logMessage->timestamp timeIntervalSince1970];
+    NSTimeInterval ts = [logMessage.timestamp timeIntervalSince1970];
     time_t ts_whole = (time_t)ts;
     int ts_frac = (int)round((ts - (double)ts_whole) * 1000.0);
     localtime_r(&ts_whole, &tm);
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
-    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage->logLevel), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
+    snprintf(time_level_str, sizeof(time_level_str), "%c %02d:%02d:%02d.%03d", logLevelToChar(logMessage.level), tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac);
     return [NSString stringWithFormat:@"%s"
 #if INCLUDE_THREAD_ID_ON_TTY
             " %-4x"
 #endif
-            " %s:%d | %@",
+            " %@:%lu | %@",
             time_level_str,
 #if INCLUDE_THREAD_ID_ON_TTY
             logMessage->machThreadID,
 #endif
-            logMessage->function,
-            logMessage->lineNumber,
-            logMessage->logMsg];
+            logMessage.function,
+            logMessage.line,
+            logMessage.message];
 }
 
 #endif

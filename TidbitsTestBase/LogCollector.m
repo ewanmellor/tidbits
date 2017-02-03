@@ -34,7 +34,7 @@
 
 
 -(void)logMessage:(DDLogMessage *)logMessage {
-    NSString * msg = [self.myFormatter formatLogMessage:logMessage] ?: logMessage->logMsg;
+    NSString * msg = [self.myFormatter formatLogMessage:logMessage] ?: logMessage.message;
     [self.buffer addObject:msg];
 }
 

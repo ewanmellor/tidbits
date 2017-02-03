@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Lumberjack/Lumberjack.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 
 /**

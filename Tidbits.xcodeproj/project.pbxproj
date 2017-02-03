@@ -83,7 +83,6 @@
 		404F58FD1A3DA8290081DA18 /* LoggingMacrosWrappers.h in Headers */ = {isa = PBXBuildFile; fileRef = 404557831A255A97009FEF2F /* LoggingMacrosWrappers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40505F621AC7088600308CAF /* LogCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B44A41ABAD75700C3EC92 /* LogCollector.m */; };
 		40505F651AC7088E00308CAF /* TBJUnitTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B448E1ABAC21000C3EC92 /* TBJUnitTestObserver.m */; };
-		40505FB41AC70DDF00308CAF /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40505FB11AC70DD300308CAF /* KissXML.framework */; };
 		405060671AC9058B00308CAF /* NSDateFormatter+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 405060661AC9058B00308CAF /* NSDateFormatter+Misc.m */; };
 		4050606A1AC905F800308CAF /* NSDateFormatter+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 405060661AC9058B00308CAF /* NSDateFormatter+Misc.m */; };
 		4050606B1AC905FC00308CAF /* NSDateFormatter+Misc.h in Headers */ = {isa = PBXBuildFile; fileRef = 405060651AC9058B00308CAF /* NSDateFormatter+Misc.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -203,11 +202,8 @@
 		40A5D53D1A4B595F004A4EE3 /* TBTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4006C52B18559C6200B2F22A /* TBTestHelpers.m */; };
 		40A5D5411A4B5A93004A4EE3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ECA82417F899230081D51E /* XCTest.framework */; };
 		40A5D5421A4B5EB6004A4EE3 /* Tidbits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E48B13198B25F30015C54E /* Tidbits.framework */; };
-		40A5D5431A4B5EBF004A4EE3 /* Lumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E48BAA198B288E0015C54E /* Lumberjack.framework */; };
-		40A5D5451A4B5F15004A4EE3 /* Lumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E48BAA198B288E0015C54E /* Lumberjack.framework */; };
 		40A9B45B177F59680068F3F5 /* LogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A9B45A177F59680068F3F5 /* LogFormatter.m */; };
 		40A9B45C177F5A5D0068F3F5 /* LogFormatter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A9B459177F59680068F3F5 /* LogFormatter.h */; };
-		40A9B4B4177F65D30068F3F5 /* libLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A9B4AF177F65B40068F3F5 /* libLumberjack.a */; };
 		40A9B4CC177F81030068F3F5 /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A9B4CB177F81030068F3F5 /* NSFileHandle+MD5.m */; };
 		40A9B4CD177F83C60068F3F5 /* NSFileHandle+MD5.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40A9B4CA177F81030068F3F5 /* NSFileHandle+MD5.h */; };
 		40B11F411A1F3B6E00EA3DA8 /* TBAsserts.m in Sources */ = {isa = PBXBuildFile; fileRef = 405EE44719AEA7EB0062DAE7 /* TBAsserts.m */; };
@@ -224,6 +220,7 @@
 		40C4E22017F87E7C000EA60C /* DNSQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E21F17F87E7C000EA60C /* DNSQuery.m */; };
 		40C4E22317F890B1000EA60C /* DNSQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C4E22217F890B1000EA60C /* DNSQueryTests.m */; };
 		40CA116A1B811CF500744958 /* UIImage+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA11691B811CF500744958 /* UIImage+Misc.m */; };
+		40CA4DD21E44191B00146403 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40158A841E43CE110089FEC8 /* KissXML.framework */; };
 		40CB974C1A4C904900DE58E5 /* LogFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CB974B1A4C904900DE58E5 /* LogFormatterTests.m */; };
 		40D188901809122400B23BAC /* NSData+SHA256.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40182C7A18090F820075AA75 /* NSData+SHA256.h */; };
 		40D1F09518875848003BAF58 /* NSSet+Misc.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D1F09418875848003BAF58 /* NSSet+Misc.m */; };
@@ -378,19 +375,131 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		401B44C91ABAE06C00C3EC92 /* PBXContainerItemProxy */ = {
+		40158A391E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18F3BFD71A81E06E00692297;
+			remoteInfo = "CocoaLumberjack-iOS-Static";
+		};
+		40158A3B1E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19FF46021B8B4CF400B43179;
+			remoteInfo = "CocoaLumberjack-iOS";
+		};
+		40158A3D1E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCB3185114EB418E001CFBEE;
+			remoteInfo = "CocoaLumberjack-macOS";
+		};
+		40158A3F1E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19D90B261BBFA9DB00947169;
+			remoteInfo = "CocoaLumberjack-tvOS";
+		};
+		40158A411E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19190EDE1B84D812008D059E;
+			remoteInfo = "CocoaLumberjack-watchOS";
+		};
+		40158A431E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19FF460F1B8B4D1400B43179;
+			remoteInfo = "CocoaLumberjackSwift-iOS";
+		};
+		40158A451E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18F3BF0F1A81D8B700692297;
+			remoteInfo = "CocoaLumberjackSwift-macOS";
+		};
+		40158A471E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19D90B351BBFAA7500947169;
+			remoteInfo = "CocoaLumberjackSwift-tvOS";
+		};
+		40158A491E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19190EEB1B84D826008D059E;
+			remoteInfo = "CocoaLumberjackSwift-watchOS";
+		};
+		40158A4B1E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18F3BFF21A81E0C700692297;
+			remoteInfo = iOSLibStaticTest;
+		};
+		40158A4D1E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCB318CA14ED6C3B001CFBEE;
+			remoteInfo = FmwkTest;
+		};
+		40158A4F1E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18F3BF5F1A81DD2E00692297;
+			remoteInfo = iOSSwiftTest;
+		};
+		40158A511E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55CCBEFF19BA679200957A39;
+			remoteInfo = SwiftTest;
+		};
+		40158A531E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19406BE11BDBABFF001194DC;
+			remoteInfo = tvOSSwiftTest;
+		};
+		40158A551E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19EC14671B84D134000EC2E7;
+			remoteInfo = watchOSSwiftTest;
+		};
+		40158A571E43CD2A0089FEC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19EC14731B84D134000EC2E7;
+			remoteInfo = "watchOSSwiftTest Extension";
+		};
+		40158A811E43CE110089FEC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 40E53ED31729F68F001664EC;
 			remoteInfo = KissXML;
 		};
-		401B45491ABBC12E00C3EC92 /* PBXContainerItemProxy */ = {
+		40158A831E43CE110089FEC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 40E53ED21729F68F001664EC;
-			remoteInfo = KissXML;
+			proxyType = 2;
+			remoteGlobalIDString = 40505F811AC70AB300308CAF;
+			remoteInfo = KissXML.framework;
 		};
 		40505F661AC7093C00308CAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -398,20 +507,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 40E48B12198B25F30015C54E;
 			remoteInfo = Tidbits.framework;
-		};
-		40505FAD1AC70DD300308CAF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 40505F801AC70AB300308CAF;
-			remoteInfo = KissXML.framework;
-		};
-		40505FB01AC70DD300308CAF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 40505F811AC70AB300308CAF;
-			remoteInfo = KissXML.framework;
 		};
 		40772C9F1B8AE58800F85AB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -434,26 +529,33 @@
 			remoteGlobalIDString = 408E88571768DEF6001B61E6;
 			remoteInfo = Tidbits;
 		};
-		40A9B4AE177F65B40068F3F5 /* PBXContainerItemProxy */ = {
+		40CA4DC61E43CF4100146403 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 40A9B4A9177F65B40068F3F5 /* Lumberjack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC58E48814DC70CF006B16E2;
-			remoteInfo = Lumberjack;
-		};
-		40A9B4B0177F65B40068F3F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40A9B4A9177F65B40068F3F5 /* Lumberjack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC58E4C114DC8BE2006B16E2;
-			remoteInfo = LibTest;
-		};
-		40A9B4B2177F65C10068F3F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40A9B4A9177F65B40068F3F5 /* Lumberjack.xcodeproj */;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = DC58E48714DC70CF006B16E2;
-			remoteInfo = Lumberjack;
+			remoteGlobalIDString = 18F3BFD61A81E06E00692297;
+			remoteInfo = "CocoaLumberjack-iOS-Static";
+		};
+		40CA4DC81E43CF5800146403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DCB3185014EB418E001CFBEE;
+			remoteInfo = "CocoaLumberjack-macOS";
+		};
+		40CA4DCA1E43CFA600146403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 40E53ED21729F68F001664EC;
+			remoteInfo = KissXML;
+		};
+		40CA4DCC1E43CFAB00146403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 40505F801AC70AB300308CAF;
+			remoteInfo = KissXML.framework;
 		};
 		40E48B9A198B26B60015C54E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -461,27 +563,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 408E88571768DEF6001B61E6;
 			remoteInfo = Tidbits;
-		};
-		40E48BA9198B288E0015C54E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40E48BA4198B288D0015C54E /* Lumberjack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DCB3185114EB418E001CFBEE;
-			remoteInfo = Lumberjack;
-		};
-		40E48BAB198B288E0015C54E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40E48BA4198B288D0015C54E /* Lumberjack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DCB318CA14ED6C3B001CFBEE;
-			remoteInfo = FmwkTest;
-		};
-		40E48BAD198B289C0015C54E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40E48BA4198B288D0015C54E /* Lumberjack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DCB3185014EB418E001CFBEE;
-			remoteInfo = Lumberjack;
 		};
 		40F45DDF19997B8E00E78240 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -653,6 +734,7 @@
 		400C95B31853C14A0095B9DC /* NSMutableArray+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Ext.h"; sourceTree = "<group>"; };
 		400C95B41853C14A0095B9DC /* NSMutableArray+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Ext.m"; sourceTree = "<group>"; };
 		4012F2D41805A7BD0036C418 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lumberjack.xcodeproj; path = ../CocoaLumberjack/Lumberjack.xcodeproj; sourceTree = "<group>"; };
 		40182C7A18090F820075AA75 /* NSData+SHA256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SHA256.h"; sourceTree = "<group>"; };
 		40182C7B18090F820075AA75 /* NSData+SHA256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SHA256.m"; sourceTree = "<group>"; };
 		401B448D1ABAC21000C3EC92 /* TBJUnitTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBJUnitTestObserver.h; sourceTree = "<group>"; };
@@ -833,7 +915,6 @@
 		40A5D5201A4B5892004A4EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40A9B459177F59680068F3F5 /* LogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogFormatter.h; sourceTree = "<group>"; };
 		40A9B45A177F59680068F3F5 /* LogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogFormatter.m; sourceTree = "<group>"; };
-		40A9B4A9177F65B40068F3F5 /* Lumberjack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lumberjack.xcodeproj; path = ../CocoaLumberjack/Xcode/LumberjackFramework/Mobile/Lumberjack.xcodeproj; sourceTree = "<group>"; };
 		40A9B4CA177F81030068F3F5 /* NSFileHandle+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+MD5.h"; sourceTree = "<group>"; };
 		40A9B4CB177F81030068F3F5 /* NSFileHandle+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+MD5.m"; sourceTree = "<group>"; };
 		40B4B828182467610076F2F1 /* NSIndexSet+Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Misc.h"; sourceTree = "<group>"; };
@@ -870,7 +951,6 @@
 		40E3ED23176EAD5700FFF503 /* NSDate+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Ext.m"; sourceTree = "<group>"; };
 		40E48B13198B25F30015C54E /* Tidbits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tidbits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E48B16198B25F30015C54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40E48BA4198B288D0015C54E /* Lumberjack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lumberjack.xcodeproj; path = ../CocoaLumberjack/Xcode/LumberjackFramework/Desktop/Lumberjack.xcodeproj; sourceTree = "<group>"; };
 		40ECA82417F899230081D51E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		40F1C92617F77C1600AD0CB9 /* FeatureMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureMacros.h; sourceTree = "<group>"; };
 		40F6506F191772BB00142318 /* NSObject+MTJSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MTJSONUtils.h"; sourceTree = "<group>"; usesTabs = 1; };
@@ -912,7 +992,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A9B4B4177F65D30068F3F5 /* libLumberjack.a in Frameworks */,
 				408E88711768DEF7001B61E6 /* libTidbits.a in Frameworks */,
 				4047B4C71805B51F0032BBA5 /* libTidbitsTestBase.a in Frameworks */,
 				401B44A11ABAC4FD00C3EC92 /* libKissXML.a in Frameworks */,
@@ -933,8 +1012,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40505FB41AC70DDF00308CAF /* KissXML.framework in Frameworks */,
-				40A5D5431A4B5EBF004A4EE3 /* Lumberjack.framework in Frameworks */,
+				40CA4DD21E44191B00146403 /* KissXML.framework in Frameworks */,
 				40A5D5421A4B5EB6004A4EE3 /* Tidbits.framework in Frameworks */,
 				40A5D5411A4B5A93004A4EE3 /* XCTest.framework in Frameworks */,
 			);
@@ -944,7 +1022,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A5D5451A4B5F15004A4EE3 /* Lumberjack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,11 +1066,34 @@
 			name = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
-		401B44C61ABAE06C00C3EC92 /* Products */ = {
+		40158A271E43CD2A0089FEC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				401B44CA1ABAE06C00C3EC92 /* libKissXML.a */,
-				40505FB11AC70DD300308CAF /* KissXML.framework */,
+				40158A3A1E43CD2A0089FEC8 /* libCocoaLumberjack.a */,
+				40158A3C1E43CD2A0089FEC8 /* CocoaLumberjack.framework */,
+				40158A3E1E43CD2A0089FEC8 /* CocoaLumberjack.framework */,
+				40158A401E43CD2A0089FEC8 /* CocoaLumberjack.framework */,
+				40158A421E43CD2A0089FEC8 /* CocoaLumberjack.framework */,
+				40158A441E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */,
+				40158A461E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */,
+				40158A481E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */,
+				40158A4A1E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */,
+				40158A4C1E43CD2A0089FEC8 /* iOSLibStaticTest.app */,
+				40158A4E1E43CD2A0089FEC8 /* FmwkTest.app */,
+				40158A501E43CD2A0089FEC8 /* iOSSwiftTest.app */,
+				40158A521E43CD2A0089FEC8 /* SwiftTest.app */,
+				40158A541E43CD2A0089FEC8 /* tvOSSwiftTest.app */,
+				40158A561E43CD2A0089FEC8 /* watchOSSwiftTest.app */,
+				40158A581E43CD2A0089FEC8 /* watchOSSwiftTest Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40158A7D1E43CE110089FEC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40158A821E43CE110089FEC8 /* libKissXML.a */,
+				40158A841E43CE110089FEC8 /* KissXML.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1080,8 +1180,7 @@
 				408E885A1768DEF6001B61E6 /* Frameworks */,
 				408E88591768DEF6001B61E6 /* Products */,
 				401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */,
-				40E48BA4198B288D0015C54E /* Lumberjack.xcodeproj */,
-				40A9B4A9177F65B40068F3F5 /* Lumberjack.xcodeproj */,
+				40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1282,15 +1381,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		40A9B4AA177F65B40068F3F5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				40A9B4AF177F65B40068F3F5 /* libLumberjack.a */,
-				40A9B4B1177F65B40068F3F5 /* LibTest.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		40C2A2F0177A56E0003276AB /* SRVResolver */ = {
 			isa = PBXGroup;
 			children = (
@@ -1458,15 +1548,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		40E48BA5198B288D0015C54E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				40E48BAA198B288E0015C54E /* Lumberjack.framework */,
-				40E48BAC198B288E0015C54E /* FmwkTest.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		40F6506D191772BB00142318 /* MTJSONUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1584,11 +1665,11 @@
 /* Begin PBXLegacyTarget section */
 		4072B7E118415743003B7703 /* Tidbits Documentation */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--project-name \"Tidbits\" --project-company \"Tipbit\" --company-id \"com.tipbit\" --exit-threshold 2 $(SOURCE_ROOT)";
+			buildArgumentsString = "--project-name \"Tidbits\" --project-company \"Ewan Mellor\" --company-id \"org.ewanmellor\" --exit-threshold 2 $(SOURCE_ROOT)";
 			buildConfigurationList = 4072B7E518415744003B7703 /* Build configuration list for PBXLegacyTarget "Tidbits Documentation" */;
 			buildPhases = (
 			);
-			buildToolPath = /opt/local/bin/appledoc;
+			buildToolPath = /usr/local/bin/appledoc;
 			buildWorkingDirectory = "$(SOURCE_ROOT)";
 			dependencies = (
 			);
@@ -1610,7 +1691,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				401B454A1ABBC12E00C3EC92 /* PBXTargetDependency */,
+				40CA4DCB1E43CFA600146403 /* PBXTargetDependency */,
 				407ADD4A1AAA298200BBE477 /* PBXTargetDependency */,
 			);
 			name = TidbitsTestBase;
@@ -1629,7 +1710,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				40A9B4B3177F65C10068F3F5 /* PBXTargetDependency */,
+				40CA4DC71E43CF4100146403 /* PBXTargetDependency */,
 			);
 			name = Tidbits;
 			productName = Tidbits;
@@ -1671,7 +1752,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				40505FAE1AC70DD300308CAF /* PBXTargetDependency */,
+				40CA4DCD1E43CFAB00146403 /* PBXTargetDependency */,
 				40505F671AC7093C00308CAF /* PBXTargetDependency */,
 			);
 			name = TidbitsTestBase.framework;
@@ -1691,7 +1772,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				40E48BAE198B289C0015C54E /* PBXTargetDependency */,
+				40CA4DC91E43CF5800146403 /* PBXTargetDependency */,
 			);
 			name = Tidbits.framework;
 			productName = Tidbits.framework;
@@ -1704,7 +1785,7 @@
 		408E88501768DEF6001B61E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Tipbit, Inc.";
 				TargetAttributes = {
 					408E88681768DEF6001B61E6 = {
@@ -1730,16 +1811,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 401B44C61ABAE06C00C3EC92 /* Products */;
+					ProductGroup = 40158A7D1E43CE110089FEC8 /* Products */;
 					ProjectRef = 401B44901ABAC3B200C3EC92 /* KissXML.xcodeproj */;
 				},
 				{
-					ProductGroup = 40A9B4AA177F65B40068F3F5 /* Products */;
-					ProjectRef = 40A9B4A9177F65B40068F3F5 /* Lumberjack.xcodeproj */;
-				},
-				{
-					ProductGroup = 40E48BA5198B288D0015C54E /* Products */;
-					ProjectRef = 40E48BA4198B288D0015C54E /* Lumberjack.xcodeproj */;
+					ProductGroup = 40158A271E43CD2A0089FEC8 /* Products */;
+					ProjectRef = 40158A261E43CD2A0089FEC8 /* Lumberjack.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1755,46 +1832,130 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		401B44CA1ABAE06C00C3EC92 /* libKissXML.a */ = {
+		40158A3A1E43CD2A0089FEC8 /* libCocoaLumberjack.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libKissXML.a;
-			remoteRef = 401B44C91ABAE06C00C3EC92 /* PBXContainerItemProxy */;
+			path = libCocoaLumberjack.a;
+			remoteRef = 40158A391E43CD2A0089FEC8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		40505FB11AC70DD300308CAF /* KissXML.framework */ = {
+		40158A3C1E43CD2A0089FEC8 /* CocoaLumberjack.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = KissXML.framework;
-			remoteRef = 40505FB01AC70DD300308CAF /* PBXContainerItemProxy */;
+			path = CocoaLumberjack.framework;
+			remoteRef = 40158A3B1E43CD2A0089FEC8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		40A9B4AF177F65B40068F3F5 /* libLumberjack.a */ = {
+		40158A3E1E43CD2A0089FEC8 /* CocoaLumberjack.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLumberjack.a;
-			remoteRef = 40A9B4AE177F65B40068F3F5 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = CocoaLumberjack.framework;
+			remoteRef = 40158A3D1E43CD2A0089FEC8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		40A9B4B1177F65B40068F3F5 /* LibTest.app */ = {
+		40158A401E43CD2A0089FEC8 /* CocoaLumberjack.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLumberjack.framework;
+			remoteRef = 40158A3F1E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A421E43CD2A0089FEC8 /* CocoaLumberjack.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLumberjack.framework;
+			remoteRef = 40158A411E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A441E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLumberjackSwift.framework;
+			remoteRef = 40158A431E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A461E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLumberjackSwift.framework;
+			remoteRef = 40158A451E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A481E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLumberjackSwift.framework;
+			remoteRef = 40158A471E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A4A1E43CD2A0089FEC8 /* CocoaLumberjackSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLumberjackSwift.framework;
+			remoteRef = 40158A491E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A4C1E43CD2A0089FEC8 /* iOSLibStaticTest.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = LibTest.app;
-			remoteRef = 40A9B4B0177F65B40068F3F5 /* PBXContainerItemProxy */;
+			path = iOSLibStaticTest.app;
+			remoteRef = 40158A4B1E43CD2A0089FEC8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		40E48BAA198B288E0015C54E /* Lumberjack.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Lumberjack.framework;
-			remoteRef = 40E48BA9198B288E0015C54E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		40E48BAC198B288E0015C54E /* FmwkTest.app */ = {
+		40158A4E1E43CD2A0089FEC8 /* FmwkTest.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = FmwkTest.app;
-			remoteRef = 40E48BAB198B288E0015C54E /* PBXContainerItemProxy */;
+			remoteRef = 40158A4D1E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A501E43CD2A0089FEC8 /* iOSSwiftTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSSwiftTest.app;
+			remoteRef = 40158A4F1E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A521E43CD2A0089FEC8 /* SwiftTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwiftTest.app;
+			remoteRef = 40158A511E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A541E43CD2A0089FEC8 /* tvOSSwiftTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = tvOSSwiftTest.app;
+			remoteRef = 40158A531E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A561E43CD2A0089FEC8 /* watchOSSwiftTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = watchOSSwiftTest.app;
+			remoteRef = 40158A551E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A581E43CD2A0089FEC8 /* watchOSSwiftTest Extension.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = "watchOSSwiftTest Extension.appex";
+			remoteRef = 40158A571E43CD2A0089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A821E43CE110089FEC8 /* libKissXML.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKissXML.a;
+			remoteRef = 40158A811E43CE110089FEC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40158A841E43CE110089FEC8 /* KissXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KissXML.framework;
+			remoteRef = 40158A831E43CE110089FEC8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2080,20 +2241,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		401B454A1ABBC12E00C3EC92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KissXML;
-			targetProxy = 401B45491ABBC12E00C3EC92 /* PBXContainerItemProxy */;
-		};
 		40505F671AC7093C00308CAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 40E48B12198B25F30015C54E /* Tidbits.framework */;
 			targetProxy = 40505F661AC7093C00308CAF /* PBXContainerItemProxy */;
-		};
-		40505FAE1AC70DD300308CAF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KissXML.framework;
-			targetProxy = 40505FAD1AC70DD300308CAF /* PBXContainerItemProxy */;
 		};
 		40772CA01B8AE58800F85AB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2110,20 +2261,30 @@
 			target = 408E88571768DEF6001B61E6 /* Tidbits */;
 			targetProxy = 408E886F1768DEF7001B61E6 /* PBXContainerItemProxy */;
 		};
-		40A9B4B3177F65C10068F3F5 /* PBXTargetDependency */ = {
+		40CA4DC71E43CF4100146403 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Lumberjack;
-			targetProxy = 40A9B4B2177F65C10068F3F5 /* PBXContainerItemProxy */;
+			name = "CocoaLumberjack-iOS-Static";
+			targetProxy = 40CA4DC61E43CF4100146403 /* PBXContainerItemProxy */;
+		};
+		40CA4DC91E43CF5800146403 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CocoaLumberjack-macOS";
+			targetProxy = 40CA4DC81E43CF5800146403 /* PBXContainerItemProxy */;
+		};
+		40CA4DCB1E43CFA600146403 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KissXML;
+			targetProxy = 40CA4DCA1E43CFA600146403 /* PBXContainerItemProxy */;
+		};
+		40CA4DCD1E43CFAB00146403 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KissXML.framework;
+			targetProxy = 40CA4DCC1E43CFAB00146403 /* PBXContainerItemProxy */;
 		};
 		40E48B9B198B26B60015C54E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 408E88571768DEF6001B61E6 /* Tidbits */;
 			targetProxy = 40E48B9A198B26B60015C54E /* PBXContainerItemProxy */;
-		};
-		40E48BAE198B289C0015C54E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Lumberjack;
-			targetProxy = 40E48BAD198B289C0015C54E /* PBXContainerItemProxy */;
 		};
 		40F45DE019997B8E00E78240 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2274,16 +2435,20 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2293,6 +2458,7 @@
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -2331,17 +2497,22 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -2553,16 +2724,20 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE_TESTING=1",
 					"GTM_USING_XCTEST=1",
@@ -2570,6 +2745,7 @@
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;

@@ -7,7 +7,7 @@
 //
 
 #import <KissXML/DDXML.h>
-#import <Lumberjack/Lumberjack.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #import "Enumerate.h"
 #import "LogFormatter.h"
@@ -72,7 +72,7 @@ static NSString * getReportDest() {
 
     self.logCollector = [[LogCollector alloc] init];
     self.logCollector.logFormatter = [[LogFormatter alloc] init];
-    [DDLog addLogger:self.logCollector withLogLevel:255];
+    [DDLog addLogger:self.logCollector];
 
     self.suites = [NSMutableArray array];
     self.suiteRunInfo = [NSMutableArray array];

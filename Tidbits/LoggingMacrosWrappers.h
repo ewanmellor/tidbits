@@ -3,7 +3,8 @@
 //  Tidbits
 //
 //  Created by Ewan Mellor on 11/25/14.
-//  Copyright (c) 2014 Tipbit, Inc. All rights reserved.
+//  Copyright (c) 2014-2015 Tipbit, Inc.
+//  Copyright (c) 2016-     Ewan Mellor.
 //
 
 /*
@@ -36,14 +37,13 @@
 #define _LoggingMacrosPrefix
 #endif
 
-#define NSLogError(__fmt, ...) LOG_C_MAYBE(LOG_ASYNC_ERROR, LOG_LEVEL_ERROR, LOG_FLAG_ERROR, 0, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
-#define NSLogWarn(__fmt, ...)  LOG_C_MAYBE(LOG_ASYNC_WARN,  LOG_LEVEL_WARN,  LOG_FLAG_WARN,  0, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
-#define NSLogInfo(__fmt, ...)  LOG_C_MAYBE(LOG_ASYNC_INFO,  LOG_LEVEL_INFO,  LOG_FLAG_INFO,  0, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
-#define NSLogUser(__fmt, ...)  LOG_C_MAYBE(LOG_ASYNC_INFO,  LOG_LEVEL_USER,  LOG_FLAG_USER,  0, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
-#define NSLog(__fmt, ...)      LOG_C_MAYBE(LOG_ASYNC_INFO,  LOG_LEVEL_INFO,  LOG_FLAG_INFO,  0, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
+#define NSLogError(__fmt, ...) LOG_MAYBE(NO,   DDLogLevelAll, DDLogFlagError, 0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
+#define NSLogWarn(__fmt, ...)  LOG_MAYBE(YES,  DDLogLevelAll, DDLogFlagWarning,  0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
+#define NSLogInfo(__fmt, ...)  LOG_MAYBE(YES,  DDLogLevelAll, DDLogFlagInfo,  0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
+#define NSLog(__fmt, ...)      LOG_MAYBE(YES,  DDLogLevelAll, DDLogFlagInfo,  0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
 
 #if DEBUG
-#define DLog(__fmt, ...) LOG_C_MAYBE(LOG_ASYNC_DEBUG, LOG_LEVEL_DEBUG, LOG_FLAG_DEBUG, 0, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
+#define DLog(__fmt, ...) LOG_MAYBE(YES, DDLogLevelAll, DDLogFlagDebug, 0, nil, __PRETTY_FUNCTION__, _LoggingMacrosPrefix __fmt, ##__VA_ARGS__)
 #else
 #define DLog(...)
 #endif
