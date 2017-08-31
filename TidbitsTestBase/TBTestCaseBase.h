@@ -25,7 +25,11 @@
 //  the License.
 //
 
+#if defined(__has_feature) && __has_feature(modules)
+@import XCTest;
+#else
 #import <XCTest/XCTest.h>
+#endif
 
 #import "TBTestHelpers.h"
 
