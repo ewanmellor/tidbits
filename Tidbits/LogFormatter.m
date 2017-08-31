@@ -107,11 +107,11 @@ static const char * filenameOfPath(const char * const file) {
     // Using snprintf for the fixed-length fields is 26-29% faster than putting it all in the stringWithFormat call.
     snprintf(time_level_str, 30, "%4d-%02d-%02d %02d:%02d:%02d.%03d %5s", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, ts_frac, logFlagToStr(logMessage.flag));
     return [NSString stringWithFormat:
-            @"%s"
+            @"%s %@"
 #if INCLUDE_FILENAME
-            " %@ %s:%lu"
+            " %s:%u"
 #else
-            " %s:%i"
+            " %u"
 #endif
             " | %@",
             time_level_str,
@@ -119,7 +119,7 @@ static const char * filenameOfPath(const char * const file) {
 #if INCLUDE_FILENAME
             filenameOfPath(logMessage.file.UTF8String),
 #endif
-            logMessage.line,
+            (unsigned)logMessage.line,
             logMessage.message];
 }
 
