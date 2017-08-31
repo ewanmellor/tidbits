@@ -40,7 +40,7 @@
 +(void)initialize {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [LogFormatter formatterRegisteredAsDefaultASLAndTTYUsingTTYFormatter:NO];
+        [LogFormatter formatterRegisteredAsDefaultASL];
     });
 }
 
