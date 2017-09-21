@@ -72,9 +72,9 @@ typedef void (^UIImageBlock)(UIImage * image);
 #endif
 typedef void (^VoidBlock)(void);
 
-typedef bool (^GetBoolBlock)();
-typedef id (^GetIdBlock)();
-typedef NSArray* (^GetNSArrayBlock)();
+typedef bool (^GetBoolBlock)(void);
+typedef id (^GetIdBlock)(void);
+typedef NSArray* (^GetNSArrayBlock)(void);
 typedef BOOL (^CStringGetBoolBlock)(const char * cstr);
 
 typedef id (^id_to_id_t)(id obj);
