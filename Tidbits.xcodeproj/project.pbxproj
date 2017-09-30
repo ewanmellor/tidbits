@@ -807,7 +807,7 @@
 		406133201A80B20B0076F37F /* NSURL+Mailto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Mailto.m"; sourceTree = "<group>"; };
 		406133241A80B2D70076F37F /* NSURL+MailtoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+MailtoTests.m"; sourceTree = "<group>"; };
 		406133291A814AC70076F37F /* NSStringPunycodeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringPunycodeAdditions.h; sourceTree = "<group>"; };
-		4061332A1A814AC70076F37F /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPunycodeAdditions.m; sourceTree = "<group>"; };
+		4061332A1A814AC70076F37F /* NSStringPunycodeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPunycodeAdditions.m; sourceTree = "<group>"; usesTabs = 1; };
 		4061332D1A814B080076F37F /* PunycodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunycodeTests.m; sourceTree = "<group>"; };
 		406212E6199E98EF0083BB3C /* FileCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCompressor.h; sourceTree = "<group>"; };
 		406212E7199E98EF0083BB3C /* FileCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCompressor.m; sourceTree = "<group>"; };
